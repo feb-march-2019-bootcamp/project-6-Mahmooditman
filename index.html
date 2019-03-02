@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>Services Pricing</title>
+</head>
+
+<body>
+    <div>
+        <form id="myform">
+            <h1>Services</h1>
+            <ul>
+                
+<!--creating each list item then when clicked bind the active class style if list item active state is truthy-->
+                <li v-for="x in offers" @click="togglestate(x)" v-bind:class="{ 'active': x.active}">
+                    {{x.name}}<span>{{x.price}}$</span>
+                </li>
+
+            </ul>
+            <div class="overallprice"> Final Price: <span>{{overallprice()}}$</span>
+            </div>
+        </form>
+    </div>
+    <script src="./code.js"></script>
+</body>
+
+</html>
